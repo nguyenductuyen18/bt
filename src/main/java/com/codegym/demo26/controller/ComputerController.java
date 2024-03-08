@@ -25,7 +25,7 @@ public class ComputerController {
 
         return modelAndView;
     }
-    @PostMapping("/saveStaff")
+    @PostMapping("/saveController")
     private ResponseEntity<Computer> saveBook(@RequestBody Computer computer) {
         return new ResponseEntity<>(iComputerService.save(computer), HttpStatus.CREATED);
     }
@@ -33,7 +33,6 @@ public class ComputerController {
     @GetMapping("/{id}")
     public ResponseEntity<Computer> showById(@PathVariable int id){
         Optional<Computer> computer = iComputerService.findById(id);
-//        Staff staff2 = new Staff(staff1.get().getId(),staff1.get().getLastName(),staff1.get().getSex(),staff1.get().getAge(),staff1.get().getDateOfBirth(),staff1.get().getAddress(),staff1.get().getPhoneNumber(),staff1.get().getEmail(),staff1.get().getPart(),staff1.get().getPosition(),staff1.get().getWage(),staff1.get().getStartDay(),staff1.get().getLastDay());
         if (!computer.isPresent()){
             return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
