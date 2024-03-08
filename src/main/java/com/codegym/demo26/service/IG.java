@@ -7,6 +7,6 @@ public interface IG<T>{
     Optional<T> findById(int id);
     T save(T t);
     void deleteById(int id);
-//    Optional<T> f(Long id);
+
 
 }
